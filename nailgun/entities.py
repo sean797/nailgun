@@ -1843,6 +1843,7 @@ class ContentViewFilterRule(
             ),
             'end_date': entity_fields.DateField(),
             'errata': entity_fields.OneToOneField(Errata),
+            'errata_id': entity_fields.StringField(),
             'max_version': entity_fields.StringField(),
             'min_version': entity_fields.StringField(),
             'name': entity_fields.StringField(
