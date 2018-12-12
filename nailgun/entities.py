@@ -1807,12 +1807,14 @@ class ContentViewVersion(
     def __init__(self, server_config=None, **kwargs):
         self._fields = {
             'content_view': entity_fields.OneToOneField(ContentView),
-            'environment': entity_fields.OneToManyField(Environment),
+            'environment': entity_fields.OneToManyField(LifecycleEnvironment),
+            'description': entity_fields.StringField(),
             'file_count': entity_fields.IntegerField(),
             'major': entity_fields.IntegerField(),
             'minor': entity_fields.IntegerField(),
             'package_count': entity_fields.IntegerField(),
             'puppet_module': entity_fields.OneToManyField(PuppetModule),
+            'repository': entity_fields.OneToManyField(Repository),
             'version': entity_fields.StringField(),
         }
         self._meta = {
